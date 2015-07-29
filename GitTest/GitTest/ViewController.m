@@ -23,7 +23,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.view.backgroundColor = [UIColor whiteColor];
-    
+    NSLog(@"weige");
     _stockForKVO = [[StockData alloc] init];
     [_stockForKVO addObserver:self forKeyPath:@"age" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
     
@@ -59,6 +59,7 @@
         NSLog(@"%@",change[@"new"]);
     }
 }
+
 - (void)dealloc{
 
     [_stockForKVO removeObserver:self forKeyPath:@"age"];
